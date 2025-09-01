@@ -1,18 +1,16 @@
+import LoginComponent from '@/app/components/Auth/Login';
 import React from 'react'
-
 export const metadata = {
-  title: "Home - DevHub",
+  title: "Login - DevHub",
   description: "Find the best tools and resources for developers.",
   keywords: "developer, resources, tools",
   authors: [{ name: "DevHub" }],
 };
 
-const page = () => {
+const Login = () => {
   return (
-    <>
-      <h1>Login</h1>
-    </>
+    <LoginComponent/>
   )
 }
 
-export default page
+export default Login
