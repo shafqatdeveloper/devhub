@@ -18,7 +18,7 @@ const LoginComponent = () => {
     ]
 
     return (
-        <div className='min-h-screen'>
+        <div className='h-screen'>
             <div className='w-full flex items-center justify-center lg:items-start lg:justify-start'>
                 {/* Landing Image */}
                 <div className='relative lg:mt-28 w-1/2 h-full hidden lg:flex items-center justify-center'>
@@ -34,14 +34,14 @@ const LoginComponent = () => {
                             type="text"
                             placeholder="Username or Email"
                             value={usernameOrEmail}
-                            className='border-[0.0001px] text-sm sm:text-base border-gray-600 p-1 sm:p-1.5 rounded w-3/4 sm:w-2/6 lg:w-3/5 outline-none focus:outline-none focus:border-primaryLight focus:border-[0.5px] transition-all duration-200'
+                            className='border-[0.0001px] text-sm sm:text-base border-gray-600 p-2 sm:p-1.5 rounded w-3/4 sm:w-2/6 lg:w-3/5 outline-none focus:outline-none focus:border-primaryLight focus:border-[0.5px] transition-all duration-200'
                             onChange={(e) => setUsernameOrEmail(e.target.value)}
                         />
                         <input
                             type="password"
                             placeholder="Password"
                             value={password}
-                            className='border-[0.0001px] text-sm sm:text-base border-gray-600 p-1 sm:p-1.5 rounded w-3/4 sm:w-2/6 lg:w-3/5 outline-none focus:outline-none focus:border-primaryLight focus:border-[0.5px] transition-all duration-200'
+                            className='border-[0.0001px] text-sm sm:text-base border-gray-600 p-2 sm:p-1.5 rounded w-3/4 sm:w-2/6 lg:w-3/5 outline-none focus:outline-none focus:border-primaryLight focus:border-[0.5px] transition-all duration-200'
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         <button className='border-[0.0001
