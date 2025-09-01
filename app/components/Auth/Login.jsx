@@ -65,7 +65,7 @@ const LoginComponent = () => {
                 
             </div>
             {/* Pages Links */}
-                <div className='px-5 absolute bottom-20 w-full flex items-center justify-center gap-x-6 gap-y-3 flex-wrap text-sm md:text-base'>
+                <div className='px-5 absolute bottom-10 lg:bottom-16 w-full flex items-center justify-center gap-x-6 gap-y-3 flex-wrap text-sm md:text-base'>
                     {links.map((link) => (
                         <Link key={link.title} href={link.href} className='border-b border-b-transparent hover:border-b-primaryLight text-textGray hover:text-primaryLight'>
                             {link.title}
@@ -73,7 +73,7 @@ const LoginComponent = () => {
                     ))}
                 </div>
                 {/* All Rights reserved */}
-                <div className='absolute bottom-10 w-full flex items-center justify-center text-sm text-textGray'>
+                <div className='absolute bottom-2.5 lg:bottom-5 w-full flex items-center justify-center text-sm text-textGray'>
                     <span>&copy; {new Date().getFullYear()} DevHub. All rights reserved.</span>
                 </div>
         </div>
