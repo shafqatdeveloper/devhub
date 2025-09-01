@@ -27,7 +27,7 @@ const LoginComponent = () => {
                     />
                 </div>
                 {/* Form Input */}
-                <div className='w-full lg:w-1/2 h-full items-center justify-center lg:items-start lg:justify-start flex lg:ml-40 flex-col gap-5 lg:pt-28 pt-14'>
+                <div className='w-full lg:w-1/2 lg:h-full items-center justify-center lg:items-start lg:justify-start flex lg:ml-40 flex-col gap-5 lg:pt-28 pt-32'>
                     <h1 className='text-3xl md:text-4xl w-full sm:w-2/6 lg:w-3/5 text-center font-extralight pb-4 text-textBlack dark:text-textWhite'>DevHub</h1>
                     <div className='flex flex-col gap-3 w-full items-center justify-center lg:items-start lg:justify-start'>
                         <input
