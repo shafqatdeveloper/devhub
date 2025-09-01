@@ -8,9 +8,18 @@ import Link from 'next/link';
 const LoginComponent = () => {
     const [usernameOrEmail, setUsernameOrEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const links = [
+        {title:"About", href:"/about"},
+        {title:"Contact", href:"/contact"},
+        {title:"Privacy Policy", href:"/privacy"},
+        {title:"Terms of Service", href:"/terms"},
+        {title:"Help", href:"/help"},
+    ]
+
     return (
-        <>
-            <div className='w-full min-h-screen flex items-center justify-center lg:items-start lg:justify-start'>
+        <div className='min-h-screen'>
+            <div className='w-full flex items-center justify-center lg:items-start lg:justify-start'>
                 {/* Landing Image */}
                 <div className='relative lg:mt-28 w-1/2 h-full hidden lg:flex items-center justify-center'>
                     <Image
@@ -18,7 +27,7 @@ const LoginComponent = () => {
                     />
                 </div>
                 {/* Form Input */}
-                <div className='w-full lg:w-1/2 h-full items-center justify-center lg:items-start lg:justify-start flex lg:ml-40 flex-col gap-5 pt-28'>
+                <div className='w-full lg:w-1/2 h-full items-center justify-center lg:items-start lg:justify-start flex lg:ml-40 flex-col gap-5 lg:pt-28 pt-14'>
                     <h1 className='text-3xl md:text-4xl w-full sm:w-2/6 lg:w-3/5 text-center font-extralight pb-4 text-textBlack dark:text-textWhite'>DevHub</h1>
                     <div className='flex flex-col gap-3 w-full items-center justify-center lg:items-start lg:justify-start'>
                         <input
@@ -53,8 +62,21 @@ const LoginComponent = () => {
                     </div>
 
                 </div>
+                
             </div>
-        </>
+            {/* Pages Links */}
+                <div className='px-5 absolute bottom-20 w-full flex items-center justify-center gap-x-6 gap-y-3 flex-wrap text-sm md:text-base'>
+                    {links.map((link) => (
+                        <Link key={link.title} href={link.href} className='border-b border-b-transparent hover:border-b-primaryLight text-textGray hover:text-primaryLight'>
+                            {link.title}
+                        </Link>
+                    ))}
+                </div>
+                {/* All Rights reserved */}
+                <div className='absolute bottom-10 w-full flex items-center justify-center text-sm text-textGray'>
+                    <span>&copy; {new Date().getFullYear()} DevHub. All rights reserved.</span>
+                </div>
+        </div>
     )
 }
 
