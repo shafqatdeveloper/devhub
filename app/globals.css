@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Tell Tailwind v4 that `dark:` utilities activate when `.dark` is on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
 
+
+/* Map Tailwind v4 color tokens to your CSS variables */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-primaryDark: #4841ca;
@@ -19,15 +17,8 @@
   --color-textGray: #6B7280;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #111827;
-    --foreground: #ededed;
-  }
-}
-
+/* Apply vars to body (use background-color, not shorthand) */
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color .2s ease, color .2s ease;
 }

@@ -1,4 +1,5 @@
 import LoginComponent from '@/app/components/Auth/Login';
+import { getUserFromCookies } from '@/app/lib/server/auth';
 import React from 'react'
 export const metadata = {
   title: "Login - DevHub",
@@ -7,9 +8,10 @@ export const metadata = {
   authors: [{ name: "DevHub" }],
 };
 
-const Login = () => {
+const Login = async() => {
+      const user = await getUserFromCookies()
   return (
-    <LoginComponent/>
+    <LoginComponent user={user}/>
   )
 }
 

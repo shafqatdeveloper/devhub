@@ -1,4 +1,5 @@
 import React from 'react'
+import Posts from '../components/Home/Posts/Posts';
 
 export const metadata = {
   title: "Home - DevHub",
@@ -7,10 +8,10 @@ export const metadata = {
   authors: [{ name: "DevHub" }],
 };
 
-const page = () => {
+const page = async () => {
   return (
     <>
-      <h1>Login</h1>
+    <Posts/>
     </>
   )
 }
