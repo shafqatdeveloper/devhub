@@ -14,7 +14,7 @@ import { z } from "zod";
 import { AuthAPI } from "@/app/services/authServices";
 
 const forgotPasswordSchema = z.object({
-    email: z.string().email("Enter a valid email"),
+    email: z.email("Enter a valid email"),
 });
 
 const ForgotPasswordComponent = () => {
