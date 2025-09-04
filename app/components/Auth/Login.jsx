@@ -12,18 +12,21 @@ import TextInput from '../Inputs/TextInput';
 import PasswordInput from '../Inputs/PasswordInput';
 import BaseButton from '../Buttons/BaseButton';
 import { loginSchema } from '@/app/lib/helpers/validationSchemas';
+import { AuthAPI } from '@/app/services/authServices';
+import { toast } from 'sonner';
 
 
 
 
 
-const LoginComponent =  ({user}) => {
+const LoginComponent = ({ user }) => {
 
     const router = useRouter()
     const search = useSearchParams()
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm({
         resolver: zodResolver(loginSchema)
     })
+    const callback = search?.get("callback")
 
 
     const links = [
@@ -36,16 +39,16 @@ const LoginComponent =  ({user}) => {
 
     useEffect(() => {
         if (user) router.replace("/")
-    }, [router,user])
-    async function onSubmit(data) {
-        const res = await fetchApi("/auth/login", { method: "POST", body: JSON.stringify(data) })
-        if (res.ok) {
-            alert("Logged In")
-            const callback = search.get("callback") || "/";
-            router.replace(callback);
-        } else {
-            const err = await res.json()
-            alert(err.error || "Unable to login")
+    }, [router, user])
+    async function onSubmit(credentials) {
+        try {
+            const { data } = await AuthAPI.login(credentials)
+            toast.success(data?.message)
+            router.replace(callback?callback:"/")
+        } catch (error) {
+            const msg =
+                error?.details?.error || error?.message || "Something went wrong";
+            toast.error(String(msg));
         }
     }
 

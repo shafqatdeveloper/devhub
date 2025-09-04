@@ -1,4 +1,3 @@
-// app/lib/server/auth.js
 import { cookies } from "next/headers";
 
 export async function getUserFromCookies() {

@@ -6,5 +6,5 @@ export const baseInputClass =
 
 export const invalidClass = "border-red-500";
 
-export const baseButtonClass = "bg-primaryLight p-2 text-sm sm:text-base hover:bg-primaryDark transition-all " +
+export const baseButtonClass = "bg-primaryLight text-textWhite p-2 h-11 text-sm sm:text-base hover:bg-primaryDark transition-all flex items-center justify-center " +
   "duration-300 cursor-pointer  sm:p-1.5 rounded"

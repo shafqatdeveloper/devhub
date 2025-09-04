@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeSwitch from "./components/ThemeSwitch/ThemeSwitch";
+import ToasterProvider from "./components/ui/ToastProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
       >
         <ThemeSwitch />
           {children}
+       <ToasterProvider/>
       </body>
     </html>
   );

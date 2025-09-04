@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const PUBLIC_ROUTES = [
- "/about", "/contact", "/login", "/signup", "/privacy", "/terms", "/help",
+ "/about","/verify-email", "/contact", "/login", "/signup", "/privacy", "/terms", "/help","/forgot-password","/reset-password"
 ];
 
 const isPublic = (pathname) =>
