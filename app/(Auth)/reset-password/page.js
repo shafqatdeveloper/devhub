@@ -1,12 +1,18 @@
-import ResetPasswordComponent from '@/app/components/Auth/ResetPassword'
-import React from 'react'
+import { Suspense } from "react";
+import ResetPasswordComponent from "@/app/components/Auth/ResetPassword";
 
-const page = () => {
+export const dynamic = "force-dynamic";
+
+export default function Page() {
   return (
-    <>
-    <ResetPasswordComponent/>
-    </>
-  )
+    <Suspense
+      fallback={
+        <div className="h-screen flex items-center justify-center text-sm text-gray-500">
+          Loading…
+        </div>
+      }
+    >
+      <ResetPasswordComponent />
+    </Suspense>
+  );
 }
-
-export default page
