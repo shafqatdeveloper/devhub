@@ -44,6 +44,9 @@ const LoginComponent = ({ user }) => {
         try {
             const { data } = await AuthAPI.login(credentials)
             toast.success(data?.message)
+             setTimeout(() => {
+            console.log('Cookies after login:', document.cookie);
+        }, 1000);
             router.replace(callback?callback:"/")
         } catch (error) {
             const msg =
